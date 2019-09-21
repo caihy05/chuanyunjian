@@ -10,6 +10,12 @@ import (
 	"time"
 )
 
+// 输出err
+//func CheckErr(err error)  {
+//	if err != nil{
+//		log.Fatalln(err)
+//	}
+//}
 
 // 欢迎
 func PrintWelcome() {
@@ -25,12 +31,12 @@ func PrintWelcome() {
 
 // 检查端口
 func CheckPort(port string) error {
-	portNum,err := strconv.Atoi(port)
-	if err != nil{
+	portNum, err := strconv.Atoi(port)
+	if err != nil {
 		log.Fatalln("[x]", "port should be a number")
 		return err
 	}
-	if portNum < 20000 || portNum > 60000{
+	if portNum < 20000 || portNum > 60000 {
 		log.Fatalln("[x]", "port should be a number and the range is [20000,60000]")
 		errMsg := errors.New("port should be a number and the range is [20000,60000]")
 		return errMsg
